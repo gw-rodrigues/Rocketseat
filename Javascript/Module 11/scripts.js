@@ -88,4 +88,76 @@ despesas e irá mostrar uma mensagem se a família está com
 saldo positivo ou negativo, seguido do valor do saldo.
 */
 
+/*
+const family = {
+    incomes: [111,200,4000,45,798,5],
+    outcomes : [4000,300,200,11.09099]
+}
+
+function sum(array) {
+    let total = 0
+    for(let value of array){
+        total += value
+    }
+    return total
+}
+function calcBalance (family) {
+
+    let incomesTotal = sum(family.incomes)
+    let outcomesTotal = sum(family.outcomes)
+    
+    let familyBalance = incomesTotal - outcomesTotal
+    let itsPositive =  familyBalance >= 0
+
+    if(itsPositive){
+        console.log(`saldo positivo, saldo:${familyBalance}`)
+    }else{
+        console.log(`saldo negativo, saldo:${familyBalance}`)
+    }
+}
+
+calcBalance(family)
+*/
+/*
+let family = {
+    incomes: [111,200,4000,45,798,5],
+    outcomes : [4000,300,200,11.09099]
+}
+
+function sum(array) {
+    let total = 0
+    for(let value of array){
+        total += value
+    }
+    return total
+}
+function calcBalance () {
+
+    const incomesTotal = sum(family.incomes)
+    const outcomesTotal = sum(family.outcomes)
+    
+    const familyBalance = incomesTotal - outcomesTotal
+    const itsPositive =  familyBalance >= 0
+
+    let balanceText = 'negativo'
+
+    if(itsPositive){
+        balanceText = 'positivo'
+    }
+    
+    console.log(`saldo ${balanceText}:${familyBalance.toFixed(2)} R$`)
+}
+
+calcBalance()
+*/
+
+/*
+============================================================================================
+
+Crie uma função que receba uma string em celsius ou fahrenheit
+e faça a transformação de uma unidade para outra 
+    C = (F - 32) * 5/9 
+    F = C * 9/5 + 32
+
+*/
 
