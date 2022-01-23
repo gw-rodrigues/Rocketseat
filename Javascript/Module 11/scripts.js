@@ -39,7 +39,7 @@ if(scoreA){
 
 console.log(scoreFinal)
 */
-
+/*
 let score = Math.floor(Math.random(100) * 100)
 
 function getScore(score){
@@ -74,3 +74,16 @@ function getScore(score){
 console.log(getScore(-1))
 console.log(getScore(101))
 console.log(getScore(score))
+*/
+
+
+/*
+============================================================================================
+
+Crie um objeto que possuirá 2 propriedades, ambas do tipo array:
+    * receitas: [] 
+    * despesas: []
+Agora, crie uma função que irá calcular o total de receitas e 
+despesas e irá mostrar uma mensagem se a família está com 
+saldo positivo ou negativo, seguido do valor do saldo.
+*/
