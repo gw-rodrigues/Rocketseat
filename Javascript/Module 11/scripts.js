@@ -11,6 +11,9 @@ numérico para sistema de notas em caracteres tipo A B C
 
 */
 /*
+
+-> my solution
+
 let score = Math.floor(Math.random(100) * 100)
 
 let scoreA = score >= 90 && score <= 100
@@ -40,6 +43,9 @@ if(scoreA){
 console.log(scoreFinal)
 */
 /*
+
+-> rocketseat solution
+
 let score = Math.floor(Math.random(100) * 100)
 
 function getScore(score){
@@ -89,6 +95,9 @@ saldo positivo ou negativo, seguido do valor do saldo.
 */
 
 /*
+
+-> my solution
+
 const family = {
     incomes: [111,200,4000,45,798,5],
     outcomes : [4000,300,200,11.09099]
@@ -119,6 +128,9 @@ function calcBalance (family) {
 calcBalance(family)
 */
 /*
+
+-> rocketseat solution
+
 let family = {
     incomes: [111,200,4000,45,798,5],
     outcomes : [4000,300,200,11.09099]
@@ -161,3 +173,93 @@ e faça a transformação de uma unidade para outra
 
 */
 
+/*
+
+-> my solution
+
+function tempConverter(temperature,format){
+    let result = 0
+    let resultText = 'the format its not valid!'
+
+    if(format == 'F' || format == 'f'){
+        result = (Number(temperature) -32) * 5/9
+        resultText = `converted to ${result.toFixed(1)} C`
+    }else if(format == 'C' || format == 'c'){
+        result = Number(temperature) * 9/5 + 32
+        resultText = `converted to ${result.toFixed(1)} F`
+    }
+
+    console.log(`${temperature} ${format} ${resultText}`)
+}
+
+tempConverter('-6','C')
+tempConverter('13','c')
+tempConverter('75','F')
+tempConverter('75','f')
+tempConverter('13','a')
+
+
+## Solution 2
+
+function degreeConverter(degree){
+
+    const value = degree.slice(0, degree.length - 1)
+    const format = degree[degree.length - 1]
+
+    let result = 0
+    let resultText = 'the format its not valid!'
+
+    if(format == 'F' || format == 'f'){
+        result = (Number(value) -32) * 5/9
+        resultText = `converted to ${result.toFixed(1)}C`
+    }else if(format == 'C' || format == 'c'){
+        result = Number(value) * 9/5 + 32
+        resultText = `converted to ${result.toFixed(1)}F`
+    }
+
+    console.log(`${value}${format} ${resultText}`)
+}
+
+degreeConverter('-6C')
+degreeConverter('13c')
+degreeConverter('75F')
+degreeConverter('75f')
+degreeConverter('13a')
+
+*/
+
+/* 
+
+-> rocketseat solution
+
+function transfomDegree(degree) {
+    const celsiusExist = degree.toUpperCase().includes('C')
+    const fahrenheitExist = degree.toUpperCase().includes('F')
+
+    if(!celsiusExist && !fahrenheitExist) {
+        throw new Error('Grau nao identificado')
+    }
+
+    let updatedDegree = Number(degree.toUpperCase().replace('F',''))
+    let formula = (fahrenheit) => (fahrenheit - 32) * 5/9
+    let degreeSign = 'C'
+
+    if(celsiusExist){
+        updatedDegree = Number(degree.toUpperCase().replace('C',''))
+        formula = (celsius) => celsius * 9/5 + 32
+        degreeSign = 'F'    
+    }
+
+    return formula(updatedDegree) + degreeSign
+}
+
+try{
+    console.log(transfomDegree('13c'))
+    console.log(transfomDegree('13C'))
+    console.log(transfomDegree('80f'))
+    console.log(transfomDegree('80F'))
+    console.log(transfomDegree('65z'))
+}catch(error){
+    console.log(error.message)
+}
+*/
