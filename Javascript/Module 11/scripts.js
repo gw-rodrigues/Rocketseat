@@ -263,3 +263,104 @@ try{
     console.log(error.message)
 }
 */
+
+/* 
+======================================================================================================
+    ∞ Buscando e contando dados em Arrays ∞
+    Baseado no Array de Livros por Categoria abaixo, faça os seguintes desafios
+        • Contar o número de categorias e o número de livros em cada categoria
+        • Contar o número de autores
+        • Mostrar livros do autor Auguto Cury
+        • Transformar a função acima em uma função que irá receber o nome do autor e devolver os livros desse autor.
+*/
+/*
+
+-> My Solution
+
+const booksByCategory = [
+    {
+        category: "Riqueza",
+        books: [
+            {
+                title: "Os segredos da mente milionária",
+                author: "T. Harv Eker",
+            },
+            {
+                title: "O homem mais rico da Babilônia",
+                author: "George S. Clason",
+            },
+            {
+                title: "Pai rico, pai pobre",
+                author: "Robert T. Kiyosaki e Sharon L. Lechter",
+            },
+        ],
+    },
+    {
+        category: "Inteligência Emocional",
+        books: [
+            {
+                title: "Você é Insubstituível",
+                author: "Augusto Cury",
+            },
+            {
+                title: "Ansiedade – Como enfrentar o mal do século",
+                author: "Augusto Cury",
+            },
+            {
+                title: "Os 7 hábitos das pessoas altamente eficazes",
+                author: "Stephen R. Covey",
+            },
+        ],
+    },
+];
+
+const books = {
+    totalCategory: () => { 
+        console.log(`Search by Category
+    Total of category: ${booksByCategory.length}`)
+    },
+    totalBooksByCategory: () => {
+        console.log('Search Total Books by Category')
+        for(let category of booksByCategory){
+            console.log(`   Category: ${category.category}, Books: ${category.books.length}`)
+        }
+    },
+    totalAuthors: () => {
+        let listOfAuthor = []
+        for(let category of booksByCategory){
+            for(let book of category.books){
+                let author = book.author.toUpperCase()
+                if(!listOfAuthor.includes(author)){
+                    listOfAuthor.push(author)
+                }
+            }
+        }
+        console.log(`Search Total of Authors
+    Total Authors: ${listOfAuthor.length}`)
+    },
+    booksByAuthor: (author) => {
+        console.log(`Search Books by Author ( ${author} )`)
+        let authorExist = false
+        for(let category of booksByCategory) {
+            for(let book of category.books){
+                if(book.author.toUpperCase().includes(author.toUpperCase())){
+                    console.log(`   Category: ${category.category}, Tittle: ${book.title}, Author: ${book.author}`)
+                    authorExist = true
+                }
+            }
+        }
+        if(!authorExist){
+            console.log('Author not found!')
+        }
+    }
+}
+
+books.totalCategory()
+books.totalBooksByCategory()
+books.totalAuthors()
+books.booksByAuthor('Augusto Cury')
+books.booksByAuthor('Sharon L. Lechter')
+books.booksByAuthor('Clason')
+books.booksByAuthor('stephen')
+
+*/
