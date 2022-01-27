@@ -7,9 +7,9 @@ app.get('/', (req, res) => {
     res.render('pages/index')
 })
 
-app.get('/about', (req, res) => {
+app.get('/sobre', (req, res) =>{ 
     res.render('pages/about')
 })
 
-app.listen(3000)
+app.listen(8080)
 console.log('server started')
